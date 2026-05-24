@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Store | زووم ستور</title>
+    <meta name="description" content="متجر Zoom Store للساعات والحقائب والاكسسوارات الفاخرة في فلسطين.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='34' fill='%230f0f1a'/%3E%3Ccircle cx='80' cy='80' r='52' fill='%231a1a2e' stroke='%23e88ca5' stroke-width='4'/%3E%3Ctext x='80' y='100' text-anchor='middle' font-family='Tajawal,sans-serif' font-size='60' font-weight='900' fill='%23f4a7b9'%3EZ%3C/text%3E%3Ctext x='80' y='142' text-anchor='middle' font-family='Tajawal,sans-serif' font-size='16' font-weight='700' fill='%23f8f5ef'%3EZoom%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="discount-banner" id="discountBanner" style="display:none;">
+        <div class="banner-scroll"><span id="bannerText"></span></div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='34' fill='%230f0f1a'/%3E%3Ccircle cx='80' cy='80' r='52' fill='%231a1a2e' stroke='%23e88ca5' stroke-width='4'/%3E%3Ctext x='80' y='100' text-anchor='middle' font-family='Tajawal,sans-serif' font-size='60' font-weight='900' fill='%23f4a7b9'%3EZ%3C/text%3E%3Ctext x='80' y='142' text-anchor='middle' font-family='Tajawal,sans-serif' font-size='16' font-weight='700' fill='%23f8f5ef'%3EZoom%3C/text%3E%3C/svg%3E" alt="Zoom Store" class="logo-img" id="logoImg">
+                <span id="logoText" class="logo-text">Zoom Store</span>
+            </a>
+            <div class="nav-search">
+                <input type="text" id="navSearchInput" placeholder="ابحثي عن حقيبة، اسوارة، أو اكسسوار..." autocomplete="off">
+                <div class="search-dropdown" id="navSearchDropdown"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#delivery">التوصيل</a></li>
+                <li><a href="#contact">تواصل</a></li>
+            </ul>
+            <div class="cart-icon" id="cartIcon" onclick="toggleCart()">🛒<span class="cart-badge" id="cartBadge" style="display:none;">0</span></div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#products" onclick="toggleMobileMenu()">المنتجات</a>
+        <a href="#about" onclick="toggleMobileMenu()">من نحن</a>
+        <a href="#delivery" onclick="toggleMobileMenu()">التوصيل</a>
+        <a href="#contact" onclick="toggleMobileMenu()">تواصل</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-logo-shell">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='34' fill='%230f0f1a'/%3E%3Ccircle cx='80' cy='80' r='52' fill='%231a1a2e' stroke='%23e88ca5' stroke-width='4'/%3E%3Ctext x='80' y='100' text-anchor='middle' font-family='Tajawal,sans-serif' font-size='60' font-weight='900' fill='%23f4a7b9'%3EZ%3C/text%3E%3Ctext x='80' y='142' text-anchor='middle' font-family='Tajawal,sans-serif' font-size='16' font-weight='700' fill='%23f8f5ef'%3EZoom%3C/text%3E%3C/svg%3E" id="heroLogo" alt="Zoom Store" class="hero-logo-img">
+            </div>
+            <span class="hero-kicker">@zoom_store_tulkarm2</span>
+            <h1 id="heroTitle">Zoom Store</h1>
+            <p class="hero-arabic">زووم ستور — طولكرم</p>
+            <p class="hero-subtitle" id="heroSubtitle">حقائب، اساور، واكسسوارات بأسعار مميزة وتوصيل لكل فلسطين</p>
+            <p class="hero-tagline">ماركات عالمية، جودة عالية، وأسعار منافسة مع توصيل سريع</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn-primary">ابدئي التسوق</a>
+                <a href="#contact" class="btn-secondary-outline">راسلينا الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="filter-section">
+        <div class="container">
+            <h2 class="section-title">تشكيلة المتجر</h2>
+            <p class="section-subtitle">تسوقي حسب الماركة أو النوع واختاري القطعة المناسبة</p>
+            <p class="store-notice" id="storeNotice" style="display:none;"></p>
+            <div class="products-search">
+                <input type="text" id="productsSearchInput" placeholder="ابحثي باسم المنتج أو الماركة أو الفئة" autocomplete="off">
+                <div class="search-dropdown" id="productsSearchDropdown"></div>
+            </div>
+            <div class="filter-toggle-bar">
+                <button class="filter-btn active" data-filter="all" onclick="filterProducts('all')">الكل</button>
+                <button class="filter-btn status-btn" data-filter="special" onclick="filterProducts('special')">مختارات فاخرة</button>
+                <button class="filter-btn status-btn" data-filter="bestseller" onclick="filterProducts('bestseller')">الأكثر طلباً</button>
+                <button class="filter-toggle-btn" onclick="toggleFilters()">الفلاتر ▼</button>
+            </div>
+            <div class="filter-panel" id="filterPanel" style="display:none;">
+                <div class="filter-group">
+                    <h4>الماركة</h4>
+                    <div id="brandFilters"></div>
+                </div>
+                <div class="filter-group">
+                    <h4>النوع</h4>
+                    <div id="categoryFilters"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container products-shell">
+            <div class="store-loading" id="storeLoading">
+                <div class="spinner"></div>
+                <p>جاري تحميل تشكيلات Zoom Store...</p>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">عن Zoom Store</h2>
+            <div class="about-content">
+                <div class="about-text-card">
+                    <p id="aboutText">Zoom Store وجهتكِ لتنسيق إطلالة راقية تجمع بين الساعات الفاخرة والحقائب الراقية والاكسسوارات اليومية.<br><br>ننتقي لكِ قطعاً أصلية بتفاصيل ذهبية أنيقة، مع خدمة سريعة واهتمام بكل طلب من أول رسالة حتى التسليم.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature"><span class="feature-icon">👜</span><span>حقائب ماركات عالمية بأسعار مميزة</span></div>
+                    <div class="feature"><span class="feature-icon">💎</span><span>اساور ستانلس ستيل مكفولة اللون لمدة سنتين</span></div>
+                    <div class="feature"><span class="feature-icon">✨</span><span>اكسسوارات متنوعة لكل المناسبات</span></div>
+                    <div class="feature"><span class="feature-icon">🚚</span><span>توصيل لكل فلسطين</span></div>
+                    <div class="feature"><span class="feature-icon">💬</span><span>طلب مباشر عبر واتساب بخطوات سهلة</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-section">
+        <div class="container">
+            <h2 class="section-title">الماركات المتوفرة</h2>
+            <div class="brands-grid" id="brandsGrid"></div>
+        </div>
+    </section>
+
+    <section id="delivery" class="delivery-section">
+        <div class="container">
+            <h2 class="section-title">خيارات التوصيل</h2>
+            <div class="delivery-grid">
+                <div class="delivery-card"><span class="delivery-icon">📦</span><h3>طولكرم والمحافظة</h3><p>توصيل خلال يوم عمل — ₪10</p></div>
+                <div class="delivery-card"><span class="delivery-icon">🚚</span><h3>باقي الضفة</h3><p>توصيل خلال 1-3 أيام — ₪20</p></div>
+                <div class="delivery-card"><span class="delivery-icon">⭐</span><h3>القدس والداخل</h3><p>توصيل إلى مختلف المناطق — ₪35</p></div>
+                <div class="delivery-card"><span class="delivery-icon">🏬</span><h3>استلام من طولكرم</h3><p>استلام مجاني بترتيب مسبق</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">تواصلي معنا</h2>
+            <p class="section-subtitle">جاهزين لاستقبال طلبكِ ومساعدتكِ في اختيار القطعة المناسبة</p>
+            <div class="social-links">
+                <a href="https://wa.me/0599000000" class="social-btn whatsapp" target="_blank" id="whatsappLink"><span>📱 WhatsApp</span></a>
+                <a href="https://www.instagram.com/zoom_store_tulkarm2" class="social-btn instagram" target="_blank" id="instagramLink"><span>📸 Instagram</span></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay pdp-overlay" id="pdpModal" style="display:none;" onclick="closePDP(event)">
+        <div class="pdp-modal" onclick="event.stopPropagation()">
+            <button class="pdp-close" onclick="closePDP()">✕</button>
+            <div class="pdp-content">
+                <div class="pdp-image" id="pdpImage"></div>
+                <div class="pdp-info">
+                    <span class="product-brand" id="pdpBrand"></span>
+                    <h2 id="pdpName"></h2>
+                    <div class="pdp-meta" id="pdpMeta"></div>
+                    <div class="pdp-size-section" id="pdpSizeSection" style="display:none;">
+                        <label>القياس:</label>
+                        <div class="pdp-size-options" id="pdpSizes"></div>
+                    </div>
+                    <div class="pdp-price" id="pdpPrice"></div>
+                    <div class="pdp-qty">
+                        <label>الكمية:</label>
+                        <div class="qty-selector">
+                            <button onclick="changePDPQty(-1)">−</button>
+                            <span id="pdpQty">1</span>
+                            <button onclick="changePDPQty(1)">+</button>
+                        </div>
+                    </div>
+                    <button class="btn-add-cart pdp-add-btn" id="pdpAddBtn" onclick="addFromPDP()">أضيفي إلى السلة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>سلة التسوق</h3>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty"><span>🛒</span><p>السلة فارغة</p></div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total"><span>المجموع:</span><span id="cartTotal">₪0</span></div>
+            <a href="checkout.html" class="btn-checkout" id="checkoutBtn">إتمام الطلب</a>
+            <button class="btn-clear-cart" onclick="clearCart()">تفريغ السلة</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Zoom Store — جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
