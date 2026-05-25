@@ -170,7 +170,7 @@ section { padding: 86px 0; }
 .cart-header { display: flex; align-items: center; justify-content: space-between; }
 .cart-close, .cart-item-remove { background: none; border: none; color: var(--muted); cursor: pointer; }
 .cart-close { font-size: 1.4rem; }
-.cart-items { flex: 1; overflow-y: auto; padding: 20px; display: grid; gap: 14px; }
+.cart-items { flex: 1; overflow-y: auto; padding: 20px; display: grid; gap: 14px; align-content: flex-start; }
 .cart-empty { min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-light); text-align: center; }
 .cart-empty span { font-size: 2.8rem; }
 .cart-item { display: grid; grid-template-columns: 70px 1fr auto auto; gap: 12px; align-items: center; padding: 14px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 18px; }
